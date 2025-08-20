@@ -1,6 +1,9 @@
 local argparse = require 'argparse'
+local config = require 'config'
 
 local function main(input_args)
+    local cfg = config.load()
+
     local parser = argparse('yelua', 'Yelua package manager')
     parser:command('install', 'Install packages')
     parser:command('remove', 'Remove packages')
