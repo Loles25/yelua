@@ -1,0 +1,4 @@
+#!/usr/bin/env lua
+package.path = package.path .. ';./src/?.lua'
+local main = require('main')
+main(arg)
