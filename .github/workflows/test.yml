@@ -1,0 +1,20 @@
+name: Lua Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.1 luarocks libyaml-dev git
+          sudo luarocks install busted
+          sudo luarocks install dkjson
+          sudo luarocks install lyaml
+      - name: Run tests
+        run: busted tests
