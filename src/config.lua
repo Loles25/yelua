@@ -7,7 +7,7 @@ local config_dir = home .. '/.yelua'
 local config_path = config_dir .. '/config.yaml'
 
 local default_config = {
-    cache_dir = home .. '/.cache/yelua'
+    cache_dir = config_dir .. '/cache'
 }
 
 local function ensure_dir(path)

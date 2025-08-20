@@ -13,8 +13,9 @@ else
     end
 end
 
-local home = os.getenv('HOME') or '.'
-local cache_base = home .. '/.yelua/cache'
+local config = require 'config'
+local cfg = config.load()
+local cache_base = cfg.cache_dir
 
 local function ensure_dir(path)
     os.execute(string.format('mkdir -p %q', path))
